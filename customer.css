@@ -1,0 +1,199 @@
+/* customer.css */
+
+/* Variables */
+:root {
+  --pin-color: #2d6a4f;
+  --pin-gradient: linear-gradient(135deg, #2d6a4f, #00aaff);
+  --bg-light: #f9fafb;
+  --text-dark: #1f2937;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header */
+.dashboard-header {
+  background: var(--pin-gradient);
+  color: #fff;
+  padding: 1.5rem 0;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-header .welcome-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-header .welcome-text p {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Profile Menu */
+.profile-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-menu .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-right: 0.75rem;
+  object-fit: cover;
+}
+
+.profile-menu .hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18px;
+  width: 24px;
+}
+
+.profile-menu .hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  overflow: hidden;
+  transform-origin: top right;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.dropdown.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.dropdown ul {
+  list-style: none;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.dropdown li a:hover {
+  background: var(--bg-light);
+}
+
+/* Bookings Overview Section */
+.bookings-overview h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Booking Card */
+.booking-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px var(--card-shadow);
+}
+
+.booking-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.booking-card .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--pin-color);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: darken(var(--pin-color), 10%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-header .welcome-text h1 {
+    font-size: 2rem;
+  }
+  .dropdown {
+    right: 1rem;
+  }
+}

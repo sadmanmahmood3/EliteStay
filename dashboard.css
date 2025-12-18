@@ -1,0 +1,351 @@
+/* =================== Base Styles =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* =================== Sidebar =================== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 1rem 0;
+  overflow-y: auto;
+  z-index: 99;
+  transition: width 0.3s ease;
+}
+.sidebar-brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.sidebar-brand h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f0758;
+}
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-menu li {
+  margin: 1rem 0;
+}
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.sidebar-menu li a:hover,
+.sidebar-menu li.active a {
+  background: #1f0758;
+  color: #fff;
+}
+.sidebar-menu li a i {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+.sidebar-menu li a span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* =================== Main Content =================== */
+.main-content {
+  margin-left: 250px;
+  padding: 1rem 2rem;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* Top Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.search-wrapper i {
+  color: #999;
+  margin-right: 0.5rem;
+}
+.search-wrapper input {
+  border: none;
+  outline: none;
+}
+.user-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: #333;
+}
+.user-wrapper i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.admin-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =================== Cards Section =================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.card-single {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.card-single:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.card-single div:first-child h1 {
+  font-size: 2.2rem;
+  color: #1f0758;
+  margin-bottom: 0.5rem;
+}
+.card-single div:last-child i {
+  font-size: 2.5rem;
+  color: #1f0758;
+}
+
+/* =================== Charts Section =================== */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.chart-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.chart-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+/* =================== Recent Activity Table =================== */
+.recent-activity {
+  margin-bottom: 2rem;
+}
+.table-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.table-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead {
+  background: #1f0758;
+  color: #fff;
+}
+table thead th {
+  padding: 1rem;
+  text-align: left;
+}
+table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.status {
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+.status-success {
+  background: #28a745;
+}
+.status-pending {
+  background: #ffc107;
+}
+.status-cancelled {
+  background: #dc3545;
+}
+
+/* =================== Responsive =================== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+  .sidebar-brand h2,
+  .sidebar-menu li a span {
+    display: none;
+  }
+  .main-content {
+    margin-left: 60px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+header {
+  background-color: #fff;
+  padding: 15px 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.welcome-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#welcome-wrapper h4 {
+  font-size: 24px;
+  color: #374151;
+}
+
+#welcome-wrapper span {
+  font-weight: 600;
+  color: #4caf50;
+}
+
+/* Style for the logout button */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: auto; /* Push the logout button to the bottom */
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #f1f5f9;
+  color: #ff4d6d;
+}
+
+.logout-btn i {
+  font-size: 1.2rem;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
+
+.modal-content .reject-btn {
+  background-color: red;
+}
+
+.modal-content .reject-btn:hover {
+  background-color: #e43f3f;
+}
+
+/* Styling for Booking Details */
+.modal-content .booking-details {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.modal-content .booking-details p {
+  margin: 5px 0;
+  font-size: 16px;
+}
