@@ -1,0 +1,59 @@
+/* Modal Container */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.modal-content .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Booking Details */
+.booking-info p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+.booking-info p strong {
+  color: #1f0758; /* Use the primary color if desired */
+}
+
+/* Close Button Styling */
+.btn-close {
+  background: #1f0758;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto 0;
+  transition: background 0.3s ease;
+}
+.btn-close:hover {
+  background: #1a0653;
+}
