@@ -1,0 +1,489 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");
+
+/* Global Styles */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Hero Header Section */
+.hero-header {
+  background: linear-gradient(135deg, #350348, #2a0076);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Venue Details and Booking Form Layout */
+.booking-page-content {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: white;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.venue-details-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.venue-details-section h2 {
+  font-size: 2rem;
+  color: #350348; /* Updated with primary color */
+  margin-bottom: 20px;
+}
+
+.venue-details-section .venue-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #350348; /* Updated with primary color */
+}
+
+.venue-details-section .venue-info p {
+  margin-bottom: 10px;
+}
+
+.venue-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.venue-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venue-info {
+  margin-top: 20px;
+}
+
+.venue-info .tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.venue-info .tags .tag {
+  background-color: #350348; /* Updated with primary color */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.venue-info .description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Booking Form Section */
+.booking-form-section {
+  flex: 1;
+  padding: 20px;
+  border-left: 2px solid #ddd;
+}
+
+.booking-form-section h2 {
+  font-size: 2rem;
+  color: #350348; /* Updated with primary color */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #350348; /* Updated with primary color */
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #350348; /* Updated with primary color */
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+  background-color: #2a0076; /* Darker variant of the primary color */
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* Time Slot Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #350348; /* Updated with primary color */
+  color: white;
+}
+
+table td.available {
+  color: green;
+  cursor: pointer;
+}
+
+table td.unavailable {
+  color: red;
+  pointer-events: none;
+}
+
+table td.available:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinner */
+.spinner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #350348; /* Updated with primary color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .booking-page-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .venue-details-section,
+  .booking-form-section {
+    flex: none;
+    padding: 10px;
+  }
+
+  .hero-header {
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .venue-details-section .venue-name {
+    font-size: 1.8rem;
+  }
+
+  .booking-form-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.available {
+  color: green;
+  font-weight: bold;
+}
+.unavailable {
+  color: red;
+  font-weight: bold;
+}
+
+.food-packages {
+  margin-top: 30px;
+}
+
+.food-packages h3 {
+  font-size: 1.8rem;
+  color: #350348;
+  margin-bottom: 15px;
+}
+
+.package-card {
+  background: #fdfdfd;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.package-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.package-card strong {
+  font-size: 1.2rem;
+  color: #2a0076;
+}
+
+.package-card span {
+  display: block;
+  margin: 5px 0;
+  font-weight: bold;
+  color: #009933;
+}
+
+.package-card s {
+  color: #999;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.package-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+}
+
+.addon-category {
+  margin-bottom: 30px;
+}
+
+.addon-category h3 {
+  margin-bottom: 15px;
+  color: #2a0076;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.addon-card {
+  border: 2px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f7f7f7;
+  transition: all 0.3s ease;
+}
+
+.addon-card:hover {
+  box-shadow: 0 0 10px rgba(42, 0, 118, 0.2);
+}
+
+.addon-card input[type="radio"] {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  transform: scale(1.3);
+  accent-color: #2a0076;
+}
+
+.addon-card h4 {
+  margin: 0 0 8px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.addon-card p {
+  margin: 0 0 0 35px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.addon-card.selected {
+  border-color: #2a0076;
+  background: #f0eaff;
+  box-shadow: 0 0 10px rgba(42, 0, 118, 0.2);
+}
+.cost-summary-card {
+  background: linear-gradient(135deg, #f1f5fc, #e8efff);
+  border-left: 5px solid #2a0076;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 25px;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.cost-summary-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #2a0076;
+  margin-bottom: 15px;
+}
+
+.cost-summary-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cost-summary-card li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 1.1rem;
+  border-bottom: 1px dashed #ccc;
+}
+
+.cost-summary-card li:last-child {
+  border-bottom: none;
+}
+
+.cost-summary-card .grand {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a003d;
+}
+.selected-addons-display {
+  background: linear-gradient(135deg, #f5f7fa, #e0e0e0);
+  border-left: 5px solid #6a0dad;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selected-addons-display h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2a0076;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selected-addons-display ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.selected-addons-display li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-addons-display li::before {
+  content: "🎉";
+  margin-right: 10px;
+}
