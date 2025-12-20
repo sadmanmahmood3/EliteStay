@@ -274,7 +274,7 @@ $rooms = $roomsStmt->get_result()->fetch_all(MYSQLI_ASSOC);
     </div>
 
     <div class="room-layout">
-      <!-- LEFT: Large image, overview, gallery -->
+      <!-- LEFT: Large image, overview,    gallery -->
       <div>
         <div class="card">
           <?php
@@ -301,7 +301,7 @@ $rooms = $roomsStmt->get_result()->fetch_all(MYSQLI_ASSOC);
         </div>
       </div>
 
-      <!-- RIGHT: Individual room list with booking buttons -->
+      <!-- RIGHT: Individual room list with booking  .  buttons -->
       <aside>
         <div class="card">
           <h3 style="margin:0 0 10px 0">Available Rooms</h3>
