@@ -244,6 +244,10 @@ $phone = '';
 
     <?php endif; ?>
   </div>
+  <!-- Zapier Chatbot Embed -->
+  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+  <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmjcec2e2003kt64t301y5j8p'></zapier-interfaces-chatbot-embed>
+</body>
 </body>
 
 </html>
